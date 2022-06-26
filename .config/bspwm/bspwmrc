@@ -1,0 +1,43 @@
+#! /bin/sh
+
+#
+# bspwm settings
+#
+
+bspc monitor -d 1 2 3 4 5
+
+bspc config border_width          1
+bspc config window_gap            8
+
+bspc config split_ratio           0.50
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+bspc config focus_follows_pointer true
+
+bspc config focused_border_color  "#b8bb26"
+
+#
+# autostart
+#
+
+# sxhkd
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# compositor
+picom &
+
+# cursor
+xsetroot -cursor_name left_ptr &
+
+# wallpaper
+nitrogen --restore &
+
+# bar
+bash $HOME/.config/polybar/launch.sh &
+
+# polkit agent
+lxpolkit &
+
+# java apps
+export _JAVA_AWT_WM_NONREPARENTING=1
+wmname LG3D

@@ -1,0 +1,24 @@
+import:
+  - /home/samarth/.config/alacritty/colors.yml
+  - /home/samarth/.config/alacritty/fonts.yml
+
+env:
+  TERM: alacritty
+  WINIT_X11_SCALE_FACTOR: '1.0'
+
+window:
+  dimensions:
+    columns: 115
+    lines: 20
+  padding:
+    x: 25
+    y: 25
+  dynamic_title: true
+  gtk_theme_variant: dark
+
+cursor:
+  style:
+    shape: Block
+  unfocused_hollow: false
+
+live_config_reload: true
